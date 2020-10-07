@@ -2,19 +2,17 @@
 
 $transportasi=[
     
-    ["bus","Bejeu",230000],
-    ["bus","Shantika",210000],
-    ["bus","Haryanto",250000],
-    ["bus",'Muji Jaya',240000],
+    ["bus","Bejeu",230000,"01.jpg"],
+    ["bus","Shantika",210000,"03.jpg"],
+    ["bus","Haryanto",250000,"02.jpg"],
 
-    ["pesawat","Lion Air",1500000],
-    ["pesawat","Garuda",2500000],
-    ["pesawat","Air Asia",2000000],
-    ["pesawat","Batik Air",2000000],
+    ["pesawat","Lion Air",1500000,"04.jpg"],
+    ["pesawat","Garuda",2500000,"05.png"],
+    ["pesawat","Air Asia",2000000,"06.jpg"],
     
-    ["Kapal","Kapal Pesiar",1000000],
-    ["Kapal","Kapal Feri",250000],
-    ["Kapal","Kapal Cepat",500000]
+    ["Kapal","Kapal Pesiar",10000000,"07.jpg"],
+    ["Kapal","Kapal Feri",250000,"08.webp"],
+    ["Kapal","Kapal Cepat",500000,"09.jpg"]
     
     ];
 
@@ -39,7 +37,7 @@ $transportasi=[
             foreach($transportasi as $key)
             {
                 if($key[0] == $filter){
-                    $menu_jenis[]=[$key[0],$key[1],$key[2]];
+                    $menu_jenis[]=[$key[0],$key[1],$key[2],$key[3]];
                 }
             }
         }
@@ -63,11 +61,12 @@ $transportasi=[
     <div class="d-flex mt-5">
     <h2 class="d-flex mx-auto" >Daftar Transportasi di Indonesia</h2>
     </div>
-    <div class="container mt-3">
+    <div class="container ">
 
             <table class="table table-striped">
             <thead class="bg-info">
             <tr>
+                <th scope="col">Armada</th>
                 <th scope="col">Moda Transportasi</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Harga Tiket</th>
@@ -77,6 +76,7 @@ $transportasi=[
         <?php foreach ($menu_jenis as $key => $value): ?>
         <tbody>
             <tr>
+                <td><img src="images/<?php echo $value[3]; ?>" alt="" width="300 px" height="200 px"></td>
                 <td><?php echo $value[0]; ?></td>
                 <td><?php echo $value[1]; ?></td>
                 <td><?php echo $value[2]; ?></td>
@@ -86,9 +86,10 @@ $transportasi=[
         <?php endforeach; ?>
         <thead class="thead-light">
                 <tr>
-                <th scope="col">Total Keseluruhan</th>
-                <th scope="col"></th>
-                <th scope="col"><?php echo $grand_total; ?></th>
+                    <th scope="col">Total Keseluruhan</th>
+                    <th scope="col"></th>
+                    <th scope="col"><?php echo $grand_total; ?></th>
+                    <th scope="col"></th>
             </tr>
         </thead>
         </table>
