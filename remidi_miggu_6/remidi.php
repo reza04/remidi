@@ -2,13 +2,13 @@
 
 $transportasi=[
     
-    ["bus","Bejeu",230000,"01.jpg"],
-    ["bus","Shantika",210000,"03.jpg"],
-    ["bus","Haryanto",250000,"02.jpg"],
+    ["Bus","Bejeu",230000,"01.jpg"],
+    ["Bus","Shantika",210000,"03.jpg"],
+    ["Bus","Haryanto",250000,"02.jpg"],
 
-    ["pesawat","Lion Air",1500000,"04.jpg"],
-    ["pesawat","Garuda",2500000,"05.png"],
-    ["pesawat","Air Asia",2000000,"06.jpg"],
+    ["Pesawat","Lion Air",1500000,"04.jpg"],
+    ["Pesawat","Garuda",2500000,"05.png"],
+    ["Pesawat","Air Asia",2000000,"06.jpg"],
     
     ["Kapal","Kapal Pesiar",10000000,"07.jpg"],
     ["Kapal","Kapal Feri",250000,"08.webp"],
@@ -79,7 +79,7 @@ $transportasi=[
                 <td><img src="images/<?php echo $value[3]; ?>" alt="" width="300 px" height="200 px"></td>
                 <td><?php echo $value[0]; ?></td>
                 <td><?php echo $value[1]; ?></td>
-                <td><?php echo $value[2]; ?></td>
+                <td><?php echo "Rp.". $value[2]; ?></td>
             </tr>
         </tbody>
         <?php $grand_total+=$value[2]; ?>
@@ -88,8 +88,8 @@ $transportasi=[
                 <tr>
                     <th scope="col">Total Keseluruhan</th>
                     <th scope="col"></th>
-                    <th scope="col"><?php echo $grand_total; ?></th>
                     <th scope="col"></th>
+                    <th scope="col"><?php echo "Rp.".$grand_total; ?></th>
             </tr>
         </thead>
         </table>
